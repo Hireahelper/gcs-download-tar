@@ -1,0 +1,27 @@
+name: 'Google Cloud Storage Download Tar'
+author: 'Hireahelper'
+description: 'Download/extract tar file from a Google Cloud Storage bucket'
+
+inputs:
+  bucket:
+    description: Name of the bucket to look for the tar file
+    required: true
+  bucket-prefix:
+    description: Prefix of filename in bucket /(owner)/(repo)/(prefix)/(key.tar)
+    required: false
+  
+  key:
+    description: Key to use as filename
+    required: true
+  
+outputs:
+  success:
+    description: Whether the tar was successfuly downloaded/extracted
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'hard-drive'
+  color: 'blue'
